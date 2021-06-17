@@ -1,6 +1,7 @@
 package cn.tedu.sp02.item.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,8 +26,15 @@ public class ItemController {
 	private int port;
 	
 	@GetMapping("/{orderId}")
-	public JsonResult<List<Item>> getItems(@PathVariable String orderId) {
+	public JsonResult<List<Item>> getItems(@PathVariable String orderId) throws InterruptedException {
 		log.info("server.port=" + port + ", orderId=" + orderId);
+		//百分之60的概率进行延迟
+		if(Math.random() < 0.6) {
+			//延迟时间[0，5000)
+			int t = new Random().nextInt(5000);
+			System.out.println("延迟时间是：" + t);
+			Thread.sleep(t);
+		}
 		List<Item> items = itemService.getItems(orderId);
 		return JsonResult.ok(items).msg("port=" + port);
 	}
