@@ -1,16 +1,19 @@
 spring:
   application:
-    name: config-server
+   name: config-server
   cloud:
     config:
       server:
-        git:
-          uri: 
+        git:  
+          uri: https://github.com/SyZdog/SOA/Config
+          searchPaths: Config
+#          username: 私有仓库需添加
+#          password: 私有仓库需添加
 server:
   port: 6001
-  
+
 eureka:
-  client: 
+  client:
     service-url:
-      defaultZone: http://eureka1:2011
-  
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      
