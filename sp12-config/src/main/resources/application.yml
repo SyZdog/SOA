@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:  
-          uri: https://github.com/SyZdog/SOA
+          uri: https://gitee.com/syzdg/SOA
           searchPaths: Config
 #          username: 私有仓库需添加
 #          password: 私有仓库需添加
