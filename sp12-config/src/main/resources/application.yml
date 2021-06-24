@@ -10,12 +10,12 @@ spring:
           searchPaths: Config
 #          username: 私有仓库需添加
 #          password: 私有仓库需添加
-#  rabbitmq:
-#    virtual-host: rabbitmq
-#    host: 192.168.64.140
-#    port: 5672
-#    username: admin
-#    password: admin
+  rabbitmq:
+    virtual-host: rabbitmq
+    host: 192.168.64.140
+    port: 5672
+    username: admin
+    password: admin
     
 server:
   port: 6001
